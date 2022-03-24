@@ -3,6 +3,30 @@
   <head>
     <title> 負荷テストツール ホーム　</title>
     <meta charset="utf-8">
+    <script>
+      function getParam(name, url) {
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, "\\$&");
+    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+        results = regex.exec(url);
+    if (!results) return false;
+    if (!results[2]) return 'none';
+    return results[2].replace(/\+/g, " ");
+}
+      if(getParam('X')){
+        if(getParam('X') == "1"){
+          location.replace("./1X.html")
+          } else if(getParam('X') == "5"){
+          location.replace("./5X.html")
+          } else if(getParam('X') == "10"){
+          location.replace("./10X.html")
+          } else if(getParam('X') == "15"){
+          location.replace("./15X.html")
+          } else if(getParam('X') == "MAX-X"){
+          location.replace("./MAX-X.html")
+          }
+        }
+    </script>
   </head>
   <body>
 <p>
